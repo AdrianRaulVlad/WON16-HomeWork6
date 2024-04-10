@@ -1,9 +1,8 @@
 /*
-1) create an object that represents a Person
+1) Create an object that represents a Person
    state: name, age, married
    behavior: getName, getAge, isMarried
 */
-
 public class Person {
     // State variables
     private String name;

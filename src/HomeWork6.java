@@ -2,7 +2,7 @@ public class HomeWork6 {
     public static void main(String[] args) {
         System.out.println("Hello and welcome!");
     /*
-    2) create an application that creates 3 persons using the objects from exercise 1.
+    2) Create an application that creates 3 persons using the objects from exercise 1.
        Print them to the console
     */
         // Creating a new Person object
