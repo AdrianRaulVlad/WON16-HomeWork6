@@ -46,7 +46,7 @@ public class Bottle {
             return "There is not enough liquid in the bottle.";
         } else {
             availableLiquid -= amount;
-            return String.format("Drank %.2f ounces. Remaining liquid: %.2f ounces", amount, availableLiquid);
+            return String.format("Drank %.2f ml. Remaining liquid: %.2f ml", amount, availableLiquid);
         }
     }
 }
