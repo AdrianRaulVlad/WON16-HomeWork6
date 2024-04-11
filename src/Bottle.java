@@ -60,3 +60,4 @@ public class Bottle {
             return "You drank " + amount + " ml. Remaining liquid: " + availableLiquid + " ml.";
         }
     }
+}
