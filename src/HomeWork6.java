@@ -37,6 +37,19 @@ public class HomeWork6 {
         System.out.println("\nProduct 3");
         printProductDetails(thirdProduct);
     }
+    /*
+    5) Create an object that represents a bottle.
+       Use each method of the object
+    */    
+        Bottle bottle = new Bottle(500, 300);
+        System.out.println("Bottle capacity: " + bottle.totalCapacity + " ml");
+        System.out.println("Available liquid: " + bottle.availableLiquid + " ml");
+
+        System.out.println(bottle.open());
+        System.out.println(bottle.drink(200));
+        System.out.println(bottle.drink(150));
+        System.out.println(bottle.drink(100)); // Not enough liquid
+        System.out.println(bottle.close());
 
     // Helper method to print person details
     private static void printPersonDetails(Person person) {
