@@ -1,52 +1,62 @@
 public class Bottle {
-    private double totalCapacity;
-    private double availableLiquid;
+    private final int totalCapacity;
+    private int availableLiquid;
     private boolean isOpen;
 
-    public Bottle(double totalCapacity, double availableLiquid, boolean isOpen) {
+    // Constructor to initialize the bottle
+    public Bottle(int totalCapacity, int availableLiquid) {
         this.totalCapacity = totalCapacity;
         this.availableLiquid = availableLiquid;
-        this.isOpen = isOpen;
+        this.isOpen = false; // Bottle is initially closed
     }
 
+    // Method to check if the bottle has more liquid
     public boolean hasMoreLiquid() {
         return availableLiquid > 0;
     }
 
-    public double getAvailableLiquid() {
+    // Method to get the available liquid in the bottle
+    public int getAvailableLiquid() {
         return availableLiquid;
     }
 
-    public double getEmptyCapacity() {
+    // Method to get the empty capacity of the bottle
+    public int getEmptyCapacity() {
         return totalCapacity - availableLiquid;
     }
 
-    public String openBottle() {
-        if (!isOpen) {
+    // Method to open the bottle
+    public String open() {
+        if (isOpen) {
+            return "Bottle is already opened";
+        } else {
             isOpen = true;
             return "Bottle is opened";
-        } else {
-            return "Bottle is already open";
         }
     }
 
-    public String closeBottle() {
-        if (isOpen) {
+    // Method to close the bottle
+    public String close() {
+        if (!isOpen) {
+            return "Bottle is already closed";
+        } else {
             isOpen = false;
             return "Bottle is closed";
-        } else {
-            return "Bottle is already closed";
         }
     }
 
-    public String drink(double amount) {
+    // Method to drink a specific amount of liquid
+    public String drink(int amount) {
         if (!isOpen) {
-            return "The bottle is closed. Please open it first.";
+            return "Cannot drink from a closed bottle. Please open the bottle first.";
+        } else if (availableLiquid == 0) {
+            return "No liquid available to drink.";
+        } else if (amount <= 0) {
+            return "Invalid amount. Please specify a positive amount to drink.";
         } else if (amount > availableLiquid) {
-            return "There is not enough liquid in the bottle.";
+            return "Not enough liquid available to drink " + amount + " ml.";
         } else {
             availableLiquid -= amount;
-            return String.format("Drank %.2f ml. Remaining liquid: %.2f ml", amount, availableLiquid);
+            return "You drank " + amount + " ml. Remaining liquid: " + availableLiquid + " ml.";
         }
     }
-}
